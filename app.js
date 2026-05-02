@@ -2,28 +2,28 @@ const express = require("express");
 const cors = require("cors");
 const { ApolloServer } = require("@apollo/server");
 
-//Conectar GraphQL con Express
-const { expressMiddleware } = require("@apollo/server/express4");  
+// Conectar GraphQL con Express
+const { expressMiddleware } = require("@apollo/server/express4");
 
-const typeDefs = require("./graphql/typeDefs");
-const resolvers = require("./graphql/resolvers");
-const context = require("./graphql/context");
+// OJO: estos archivos están dentro de src/graphql
+const typeDefs = require("./src/graphql/typeDefs");
+const resolvers = require("./src/graphql/resolvers");
+const context = require("./src/graphql/context");
 
 const app = express();
 
-//Llamar al frontend y recibir JSON
+// Permite peticiones del frontend y recibir JSON
 app.use(cors());
 app.use(express.json());
 
-
-//Configura GraphQL
+// Configura GraphQL
 const startApolloServer = async () => {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
   });
 
-//Inicia Apollo
+  // Inicia Apollo
   await server.start();
 
   app.use(
@@ -38,4 +38,3 @@ module.exports = {
   app,
   startApolloServer,
 };
-

@@ -1,7 +1,9 @@
 require("dotenv").config();
 
 const { app, startApolloServer } = require("./app");
-const connectDB = require("./config/db");
+
+// OJO: el archivo está dentro de src/config y se llama BD.js
+const connectDB = require("./src/config/BD");
 
 const PORT = process.env.PORT || 5001;
 
