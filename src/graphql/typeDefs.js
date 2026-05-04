@@ -1,4 +1,8 @@
-// ! = el dato no puede venir null
+/**
+ * Archivo que define los esquemas y tipos de datos (Type Definitions) para la API GraphQL.
+ * Especifica cómo se estructura la información de los vehículos y qué consultas (Queries) se pueden realizar.
+ * El signo '!' indica que el campo es obligatorio (no puede ser nulo).
+ */
 const typeDefs = `#graphql
   type Vehicle {
     id: ID!       

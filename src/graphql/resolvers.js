@@ -1,5 +1,9 @@
 const Vehicle = require("../models/vehicle.model");
 
+/**
+ * Objeto que contiene las funciones (resolvers) para responder a las consultas (Queries) y mutaciones de GraphQL.
+ * Conecta las definiciones de `typeDefs` con la base de datos de MongoDB.
+ */
 const resolvers = {
   Query: {
     // Consulta pública: permite ver un vehículo por id

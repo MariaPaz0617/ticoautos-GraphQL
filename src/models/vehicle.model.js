@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
-//Mismo model del Backend
+/**
+ * Esquema de Mongoose para la colección de vehículos.
+ * Este modelo es idéntico al utilizado en el Backend principal para asegurar consistencia
+ * en la estructura de datos que GraphQL consume y devuelve desde MongoDB.
+ */
 const vehicleSchema = new mongoose.Schema(
   {
     title: {

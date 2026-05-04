@@ -1,5 +1,10 @@
 const jwt = require("jsonwebtoken");  //Verifica el Token
 
+/**
+ *Genera el contexto global para cada petición GraphQL.
+ * Extrae el token JWT de la cabecera `Authorization y lo verifica 
+ *Añade el usuario decodificado al contexto para poder usarlo en los resolvers.
+*/
 const context = async ({ req }) => {
   const authHeader = req.headers.authorization || "";
 
