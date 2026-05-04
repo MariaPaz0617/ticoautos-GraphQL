@@ -9,7 +9,7 @@ const typeDefs = `#graphql
     price: Float!
     description: String
     status: String
-    vehicleImage: [String]
+    vehicleImage: [String]  
     user: ID!
     createdAt: String
     updatedAt: String
@@ -17,7 +17,12 @@ const typeDefs = `#graphql
 
   type Query {
     getVehicle(id: ID!): Vehicle
+
+    # Consulta pública
     getAllVehicles: [Vehicle]
+
+    # Consulta protegida con token
+    getAllVehiclesAuth: [Vehicle]
   }
 `;
 
