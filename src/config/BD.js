@@ -1,10 +1,22 @@
 const mongoose = require("mongoose");
 
+/**
+ *Conexión con la base de datos MongoDB utilizando Mongoose.
+ * Verifica la existencia de la variable de entorno DATABASE_URL antes de intentar la conexión.
+*/
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    if (!process.env.DATABASE_URL) {
+      throw new Error("Falta la variable DATABASE_URL en el archivo .env");
+    }
+
+    await mongoose.connect(process.env.DATABASE_URL);
+
+    console.log("Conexión a MongoDB establecida");
   } catch (error) {
-     process.exit(1);
+    console.error("Error al conectar a MongoDB:");
+    console.error(error.message);
+    throw error;
   }
 };
 
