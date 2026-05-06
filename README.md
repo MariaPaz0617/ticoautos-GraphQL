@@ -90,3 +90,7 @@ La API permite realizar las siguientes consultas mediante GraphQL:
 
 - María Paz Ugalde Araya
 - María Jimena Jara Rojas
+
+# TicoAuto
+
+![Logo TicoAuto](./images/logo.png)
